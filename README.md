@@ -1,8 +1,10 @@
 # IEE Core
 
-IEE Core is a portable [Agent Plugin](https://agent-plugins.org/specification) for making original interactive work in Rive. Its 13 [Agent Skills](https://agentskills.io/specification) guide an agent through visual direction, scene structure, scripting, motion, state machines, data, layouts, rigging, Editor work, and review. The package also declares the Rive desktop Editor MCP connection.
+IEE Core is a portable [Agent Plugin](https://agent-plugins.org/specification) for making original interactive work in Rive. Four [Agent Skills](https://agentskills.io/specification) guide an agent through creative direction, authoring, diagnosis, and verification. Technical craft guidance is loaded as local references only when needed. The package also declares the Rive desktop Editor MCP connection.
 
 IEE is a curated creative workflow. It helps an agent make and check a Rive artifact using the tools available in its environment. It does not provide host application runtime integration or bundle the Rive CLI, Editor, or documentation.
+
+IEE supplies a working method, not a guarantee of professional results from every model. Visual review requires an agent that can inspect rendered images; authoring requires local CLI/filesystem access or a working Editor connection. Automatic skill selection depends on the client. The current [evaluation coverage](tests/evals/README.md) distinguishes exercised workflows from capabilities still needing live validation.
 
 ## Install
 
@@ -49,29 +51,26 @@ For a client that supports Agent Skills but not full plugins, install just the s
 - For a text project, install the [Rive CLI](https://rive.app/docs/cli/getting-started) and give the agent filesystem and shell access. The installed CLI is the version-matched technical reference: use `rive docs --list`, relevant `rive docs` topics, and `rive schema` before authoring.
 - For an open Editor file, run the [Rive desktop Editor MCP server](https://rive.app/docs/editor/ai/mcp) and use a client that supports Streamable HTTP MCP. `mcp.json` connects to `http://127.0.0.1:9791/mcp`.
 
-Start with the `iee` skill for a complete work. Use a focused skill for a specific craft task.
+Start with `iee` for a new creative work. Enter `iee-build`, `iee-debug`, or `iee-review` directly for a clear edit, defect, or review. The agent does not need to load every skill for every request.
 
 ## Skills
 
 | Skill | Scope |
 | --- | --- |
-| `iee` | Direct a complete Rive work and choose the authoring surface |
-| `iee-design` | Visual direction and composition |
-| `iee-rml` | Editable scene structure in Rive Markup Language |
-| `iee-luau` | Luau scripting |
-| `iee-animascript` | AnimaScript and WebAssembly scripting |
-| `iee-wgsl` | Shader effects |
-| `iee-motion` | Timing and animation craft |
-| `iee-state-machines` | Interaction states and transitions |
-| `iee-data-binding` | Data models and bindings |
-| `iee-layouts` | Responsive scene layout |
-| `iee-rigging` | Bones and deformation |
-| `iee-mcp` | Editing through the desktop Editor MCP |
-| `iee-review` | Visual, behavior, and delivery verification |
+| `iee` | Turn a creative request into a visual and behavioral brief |
+| `iee-build` | Build or edit the artifact using the relevant local craft references |
+| `iee-debug` | Reproduce a defect, trace ownership, repair its cause, and check regression |
+| `iee-review` | Verify appearance, behavior, and the requested handoff |
+
+RML, Editor MCP, motion, state machines, data binding, layouts, rigging, Luau, AnimaScript, and WGSL are references inside `iee-build`. The scene model is shared there. Stable concepts and decisions are written directly in the plugin; exact syntax and API facts come from the installed CLI's `docs` and `schema`. Web documentation is a fallback for a specific missing fact.
+
+### Migrating from 0.1
+
+Version 0.2 intentionally removes the public craft skills. Replace previous `iee-design` invocations with `iee`, and previous technical skill invocations (including `iee-fudamental`, `iee-rml`, and `iee-mcp`) with `iee-build`. Use `iee-debug` for failures. `iee-review` remains the verification entrypoint. Update saved prompts or explicit skill references and start a new client session after reinstalling the plugin. Rive project formats are unaffected.
 
 ## Compatibility
 
-An Agent Plugins client with skills support can load all 13 skills. MCP support is optional; an unavailable Editor connection does not invalidate the skills. A client that supports only MCP can connect to the Editor but cannot load the IEE instructions. Other agents need their own import or adapter.
+An Agent Plugins client with skills support can load all four skills. MCP support is optional; an unavailable Editor connection does not invalidate the skills. A client that supports only MCP can connect to the Editor but cannot load the IEE instructions. Other agents need their own import or adapter.
 
 `127.0.0.1` refers to the machine running the agent client. A cloud agent cannot reach a desktop Editor on the user's machine through this URL by default. CLI workflows need a Rive CLI installation and local file access. Client capabilities and permissions remain client-specific.
 
@@ -85,6 +84,7 @@ skills/            Portable skill packages and task-specific references
 .agents/plugins/    Codex marketplace catalog
 .claude-plugin/    Claude Code marketplace and manifest
 .mcp.json         Claude Code's Editor MCP configuration
+tests/            Package regression tests and agent evaluation scenarios
 ```
 
 This repository contains only `iee-core`. Future IEE plugins for particular styles or kinds of work are separate repositories and packages. Agent Plugins 1.0.0 has no portable dependency field between packages.

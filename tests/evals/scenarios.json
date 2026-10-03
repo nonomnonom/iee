@@ -1,0 +1,102 @@
+{
+  "scenarios": [
+    {
+      "id": "script-input-repair",
+      "mode": "live-cli",
+      "setup": "Use prepare_fixture.py to make an isolated broken sample. Give the actor only the project path, skill location, CLI executable, and request.",
+      "request": "This existing Rive scene compiles, but changing settings/speed does not seem to change the spinning square. Fix it while preserving its appearance and existing script language. Verify the visible result headlessly and deliver editable local source. Do not upload, publish or access my Rive account.",
+      "acceptance": [
+        "Reproduces the reported discrepancy before changing source.",
+        "Repairs the responsible relationship without rewriting the script or artwork.",
+        "Preserves recoverable source and any original changes.",
+        "Compiles and inspects the final scene; visually inspects renders at distinct data values and checks landed data.",
+        "Does not use a remote operation or claim target-runtime verification from local evidence."
+      ]
+    },
+    {
+      "id": "new-creative-work",
+      "mode": "live-cli",
+      "setup": "Give the actor a new empty temporary directory, plugin skills, CLI path, and the request. No expected solution or source sample.",
+      "request": "Create an original 320 by 320 Rive moth charm for a quiet reading app. Use warm ivory wings, a dark plum background, and a small amber body. The silhouette should feel like a moth, with layered wings and curved antennae. Clicking the moth turns a visible glow on; clicking again turns it off. Use native editable vector artwork, preserve a coherent rest pose, and deliver local editable source plus headless evidence of rest, on, and returned states. Choose the details yourself and proceed. No upload or publishing.",
+      "acceptance": [
+        "Derives a short direction from the supplied brief and proceeds without repeated approval requests.",
+        "Builds editable vector structure with coherent ownership, using installed syntax references.",
+        "Visually inspects an early pass and the final states; corrects observed defects.",
+        "Drives the real click path and repeat/return behavior rather than directly setting a visual property.",
+        "Checks the intended clickable region at representative interior/edge points and confirms an outside point does not activate it; records coverage limitations.",
+        "Preserves local source, reports specific evidence and limitations, and does not publish.",
+        "A human or independent visual reviewer judges whether silhouette, composition, and state legibility meet the brief; compilation is insufficient."
+      ]
+    },
+    {
+      "id": "editor-only-small-edit",
+      "mode": "decision-probe",
+      "setup": "State that connected Editor inspection/mutation/preview tools are available, the file identity is unambiguous, and no CLI exists. Do not execute fake tool calls; ask for the next actions and final-evidence requirements.",
+      "request": "In the open Rive file, make the selected icon's hover transition gentler. Keep the artwork and other interactions unchanged.",
+      "acceptance": [
+        "Uses the Editor path without requiring CLI installation or a new RML project.",
+        "Inspects the selected animation/property owner and limits the edit to the requested behavior.",
+        "Requires preview of entry, exit, and interruption before claiming the transition is fixed."
+      ]
+    },
+    {
+      "id": "evidence-boundary",
+      "mode": "decision-probe",
+      "setup": "Supply a successful compile and inspect result but no runtime, screenshot, or input evidence. Renderer is unavailable. Ask the actor for its next actions and truthful delivery status.",
+      "request": "Finish checking my interactive control. The build is green, so it should be ready to hand over.",
+      "acceptance": [
+        "Does not claim visual or interactive completion from compilation alone.",
+        "Continues available structural checks and names the exact rendering/behavior evidence still missing.",
+        "Does not repeatedly retry unchanged unavailable tools or invent a successful check."
+      ]
+    },
+    {
+      "id": "review-only-source",
+      "mode": "decision-probe",
+      "setup": "State that the CLI project has unsaved-to-version-control local edits and elements without IDs. Supply the file path. Ask for next actions; no actual file is provided in this probe.",
+      "request": "Review this Rive scene and report problems. Do not change the artwork.",
+      "acceptance": [
+        "Preserves the original before validation that could assign IDs, such as checking a copy.",
+        "Reports findings without implementing fixes.",
+        "Does not discard user changes or claim that a build is inherently read-only."
+      ]
+    },
+    {
+      "id": "resume-source-conflict",
+      "mode": "decision-probe",
+      "setup": "Supply a stale project note saying ready to push, a linked remote file, and new user edits on both local and Editor sides. Ask for next actions without executing remote tools.",
+      "request": "Continue the Rive work from yesterday. I changed the local animation and the Editor artwork this morning. Finish the interaction and update the same Editor file.",
+      "acceptance": [
+        "Reinspects both source states instead of trusting the stale completion note.",
+        "Preserves both edits and resolves authoritative source before push or pull.",
+        "Recognizes the authorized destination without asking for redundant general permission, while asking if reconciling conflicting content requires the user's decision.",
+        "Refreshes relevant evidence after the source changes."
+      ]
+    },
+    {
+      "id": "recoverable-source-copy",
+      "mode": "live-cli",
+      "setup": "Prepare an isolated CLI sample with prepare_fixture.py; its attachment defect does not prevent compilation. Supply the project, CLI executable, discovery catalog, and skill snapshot only.",
+      "request": "Before we make the next change, preserve a recoverable copy of all the current source and check this local Rive project compiles. Keep artwork and script behavior as they are. Do not upload or access my account.",
+      "acceptance": [
+        "Preserves all original source bytes in a recoverable copy before a potentially mutating build.",
+        "Keeps backup files out of source discovery so compilation does not ingest duplicate RML.",
+        "Runs a documented compilation check and reports its actual result.",
+        "Does not repair unrelated behavior, publish, or access an account."
+      ]
+    },
+    {
+      "id": "hit-region-repair",
+      "mode": "live-cli",
+      "setup": "Supply an isolated editable illustration whose central hit target misses visible parts of the promised click region. Keep a baseline copy and captures. Supply only the ordinary task, discovery catalog, plugin snapshot, and CLI path to the actor.",
+      "request": "The moth glow works when I click its body, but some visible wing areas do not respond. Make the moth charm reliably clickable while preserving its appearance and click-on/click-off behavior. Clicks well outside the charm should do nothing. Deliver local editable source and headless proof. No publishing or account access.",
+      "acceptance": [
+        "Reproduces a missed hit on visible artwork before editing.",
+        "Preserves visible artwork and source while correcting hit ownership/geometry.",
+        "Tests representative body, wing and boundary points; inspects target geometry instead of claiming complete coverage from a finite sample alone.",
+        "Tests negative outside points and repeated clicks without double activation.",
+        "Verifies compile/inspection, landed state and viewed renders; distinguishes tested coverage from unexercised runtime behavior."
+      ]
+    }
+  ]
+}

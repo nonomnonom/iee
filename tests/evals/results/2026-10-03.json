@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-03",
+  "package_version": "0.2.0",
+  "reference_repository": {
+    "url": "https://github.com/obra/superpowers",
+    "commit": "8ca22dba9a94f28898bbce59f2537ff4d87c747d"
+  },
+  "environment": {
+    "platform": "Windows",
+    "rive_cli": "1.3.0"
+  },
+  "skill_tree_hash_algorithm": "SHA256 of newline-joined sorted relative-path + NUL + file-SHA256 entries",
+  "current_skills_sha256": "f02b87fb9a0d560f61c8bcb7c8a0a7724ae23070f753859795264ba66efb289f",
+  "discovery": {
+    "before_public_skills": 14,
+    "after_public_skills": 4,
+    "before_entrypoint_words": 5872,
+    "after_entrypoint_words": 1685,
+    "note": "Counts are total SKILL.md words, not measured token cost or runtime performance. Technical references remain available on demand."
+  },
+  "local_evidence_directory": ".refrence/evaluations/2026-10-03",
+  "checks": {
+    "package_validator": "passed",
+    "python_unit_tests": {
+      "passed": 5
+    },
+    "skill_creator_quick_validate": {
+      "passed": 4,
+      "python_mode": "UTF-8"
+    },
+    "claude_plugin_manifest": "passed",
+    "claude_marketplace_manifest": "passed",
+    "diff_whitespace": "passed",
+    "fixture_existing_directory_refusal": "passed; marker and directory contents unchanged"
+  },
+  "trials": [
+    {
+      "scenario": "script-input-repair",
+      "phase": "baseline",
+      "mode": "live-cli",
+      "skills_sha256": "f143d6df872f2f007cae0c6b9e60eb4b25d74766b4f248a8fd000f5f99c33593",
+      "status": "completed",
+      "loaded_skills": [
+        "iee",
+        "iee-luau",
+        "iee-data-binding",
+        "iee-review",
+        "iee-rml",
+        "iee-fudamental"
+      ],
+      "result": "Reproduced fallback speed, repaired input name, verified distinct rendered data values without changing script or artwork."
+    },
+    {
+      "scenario": "script-input-repair",
+      "phase": "four-skills",
+      "mode": "live-cli",
+      "skills_sha256": "c8be488616cdd9504e4f64e355715c0f3b979446d378f08a110a67b71fd0f307",
+      "status": "completed_with_recovery",
+      "loaded_skills": [
+        "iee-debug",
+        "iee-build",
+        "iee-review"
+      ],
+      "result": "Reproduced identical frames with distinct landed values; corrected one RML input name; unchanged script; compile clean; inspected stationary and rotating captures.",
+      "observed_issue": "In-project .rml backup caused duplicate IDs. Agent recovered by changing backup extensions. Guidance hidden in an optional reference was not loaded.",
+      "follow_up": "Moved backup invariant to iee-build; tested separately in recoverable-source-copy.",
+      "evidence": "repair/REPAIR.md"
+    },
+    {
+      "scenario": "new-creative-work",
+      "phase": "four-skills",
+      "mode": "live-cli",
+      "skills_sha256": "084463b5cd3dd753183c1f4725ae87f518bf87fa5f6788b0dbf512a26bba588b",
+      "status": "completed_with_recoveries",
+      "loaded_skills": [
+        "iee",
+        "iee-build",
+        "iee-review",
+        "iee-debug"
+      ],
+      "result": "Native editable 320x320 moth; actual clicks give false/true/false; repeat and interruption checked; viewed rest/on/returned; compile and inspection clean.",
+      "independent_review": "Parent viewed rest/on captures, checked landed booleans, and judged layered ivory wings, curved antennae, amber body, plum background and visible glow against the brief.",
+      "observed_issues": [
+        "Unsupported state attribute corrected",
+        "Hit target that inspected clean did not receive clicks; explicit geometry fixed it",
+        "Two initial captures landed outside the isolated project because workdir was omitted; files removed"
+      ],
+      "follow_up": "Added explicit working-directory/output-path guidance to iee-build. This wording clarification was not followed by another full creative run.",
+      "evidence": "creative/REPORT.txt"
+    },
+    {
+      "scenario": "editor-only-small-edit",
+      "mode": "decision-probe",
+      "skills_sha256": "c8be488616cdd9504e4f64e355715c0f3b979446d378f08a110a67b71fd0f307",
+      "status": "expected_decisions_observed",
+      "loaded_skills": [
+        "iee-build",
+        "iee-review"
+      ],
+      "result": "Chose Editor inspection and motion adjustment; no CLI installation or approval ceremony; required entry/exit/repeat/interruption preview.",
+      "limitation": "No actual Editor calls were exercised."
+    },
+    {
+      "scenarios": [
+        "evidence-boundary",
+        "review-only-source",
+        "resume-source-conflict"
+      ],
+      "mode": "decision-probe",
+      "skills_sha256": "084463b5cd3dd753183c1f4725ae87f518bf87fa5f6788b0dbf512a26bba588b",
+      "status": "expected_decisions_observed",
+      "result": "Distinguished unverified interaction from green build, protected source during review, and preserved both sides before authorized reconciliation.",
+      "limitation": "Combined probe loaded all skill bodies, so it is not evidence of context-efficient selection. The focused Editor probe was repeated separately with a description-only catalog."
+    },
+    {
+      "scenario": "recoverable-source-copy",
+      "mode": "live-cli",
+      "skills_sha256": "947a5c71b7688de7b6ca907f6caf0586494ed8506a1a63ee2caff8eea954d441",
+      "status": "passed",
+      "loaded_skills": [
+        "iee-build",
+        "iee-review"
+      ],
+      "result": "ZIP contains every original source file with matching SHA256; compile and inspect pass; source hashes unchanged; no duplicate inputs or account operations.",
+      "evidence": "backup/source-backup-20261003.manifest.json"
+    }
+  ],
+  "not_exercised": [
+    "Live Editor MCP mutation",
+    "Cross-client live sessions beyond this agent environment",
+    "Remote push/pull reconciliation",
+    "Native .rev export",
+    "Web signing/publishing",
+    "Standalone destination runtime playback",
+    "Broad creative-quality benchmark across styles and briefs"
+  ],
+  "conclusion": "The process consolidation and tested local workflows are supported by evidence. These trials do not establish category ranking or exhaustive production compatibility.",
+  "follow_up_audit": "2026-10-03-audit.json",
+  "follow_up_correction": "A later independent audit reproduced a missed outer-wing click in the creative artifact. The original central/repeat tests remain true but did not establish full advertised hit coverage. See follow-up evidence and isolated repair."
+}

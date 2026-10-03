@@ -1,16 +1,43 @@
 ---
 name: iee-review
-description: Review a Rive artifact for visual craft, working interaction, responsive layout, script behavior, accessibility, and deliverable integrity.
+description: Use when assessing a Rive artifact, preparing a source or export handoff, or about to claim its appearance, animation, interaction, or delivery is complete.
 ---
 
-# Review the Rive work
+# Verify the claim against the artifact
 
-Review the artifact against its brief, not only against whether it builds. Identify the intended focal point, content hierarchy, rest state, animated states, input paths, data variants, and target sizes. Report concrete defects with the state and evidence that exposed them, then fix them when the task includes completion of the work.
+**Principle:** claim only what current evidence demonstrates.
 
-For a CLI project with shell access and Rive CLI installed, use three separate checks: `rive <dir> --verify` for compilation, `rive inspect <dir> --summary` or `--json` for resolved scene structure and problems, and rendered captures for appearance. Use `--test` for script logic, `--data-dump=-` for data changes, and `--pointer`, `--key`, `--data`, `--advance`, and `--viewport` to reproduce relevant states. Read `rive docs workflow` and `rive docs gotchas` for version-specific limits of these checks.
+## Establish the review
 
-Use the [verification matrix](references/verification.md) to select checks for the artifact's actual features.
+Identify the brief, current source or Editor state, relevant sizes/states, and requested deliverable. Reuse evidence from this revision. After an edit, regenerate only checks affected by it or by unresolved concerns.
 
-Inspect visual quality in the rendered output: alignment, text legibility, contrast, clipping, hierarchy, motion timing, and whether each action gives clear feedback. Check keyboard focus and semantic information when the work accepts keyboard or accessibility actions. Verify that a reduced-motion property changes the animation while preserving feedback. Use `rive docs semantics` and the [Editor accessibility guides](https://rive.app/docs/editor/accessibility/semantics) for available mechanisms. Runtime semantics support varies by platform, so check the target's feature support before claiming screen-reader behavior.
+For review-only requests, inspect without implementing fixes. Preserve the original before validation that can assign IDs; use a review copy when needed. For completion tasks, route a failed behavior to `iee-debug` and a clear visual revision to `iee-build`.
 
-Use `--bench` or target-device preview when performance is a concrete concern. Describe what was actually tested; do not equate a clean compile, empty `problems`, or one screenshot with a finished interactive experience.
+## Collect the necessary evidence
+
+Use the relevant rows of the [verification matrix](references/verification.md), not every possible check.
+
+| Claim | Required evidence |
+| --- | --- |
+| Structure is valid | Compilation/Editor diagnostics plus inspection of intended objects and links |
+| Appearance meets the brief | Viewed captures or preview of the authored rest pose, opening playback, and meaningful states |
+| Interaction works | Actual input/data sequences over the intended hit/focus region, visible response and relevant values, plus return/repeat/interruption and outside/disabled cases where applicable |
+| Handoff is usable | Current output file/source, required assets and exposed names, and opening/playback in the available destination |
+
+A file existing is not visual inspection. An empty problems list does not prove wiring. A passing script test does not prove the attached scene works.
+
+## Judge craft
+
+Compare silhouette, hierarchy, spacing, contrast, typography, clipping, and motion character with the brief. Name defects by location and state. Inspect intermediate poses and loop boundaries; use playback when timing or feel cannot be judged from captures.
+
+Separate three conclusions: **brief compliance**, **craft quality**, and **handoff readiness**. Working input is evidence for behavior, not artistic polish. For craft concerns, identify the visible defect, its effect on the brief, and the smallest useful correction. Do not invent defects or extra features to justify more work. If a claim depends on a supplied reference, compare matching scale and state.
+
+Check responsive sizes, keyboard/focus/semantics, and reduced motion when relevant to the work. Headless captures do not prove high-DPI behavior, every platform's accessibility, or target-device performance. Measure performance when the brief or an observed issue requires it.
+
+## Deliver with a clear boundary
+
+Report the artifact location, verified outcomes, and material gaps. Distinguish **verified**, **failed**, and **not exercised**. A blocked check stays unverified; continue independent work and name the concrete missing capability.
+
+Deliver the requested editable source and/or export. A project preview does not independently test a standalone exported file. Check installed publishing docs for script signing and native-export requirements, preserving the requested destination and existing authorization. Do not substitute a hosted link for a local deliverable.
+
+Completion requires the relevant claims above to be supported. If a required check cannot run, hand over useful work with its limitation explicitly stated.

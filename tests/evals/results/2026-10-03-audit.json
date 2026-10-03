@@ -1,0 +1,247 @@
+{
+  "date": "2026-10-03",
+  "assessment": "end-to-end follow-up audit",
+  "verdict": "Useful tested local-authoring foundation; not yet demonstrated high-tier maturity or universal professional capability.",
+  "universal_professional_claim_supported": false,
+  "superpowers_comparison": {
+    "reference_commit": "8ca22dba9a94f28898bbce59f2537ff4d87c747d",
+    "observed_mechanisms": [
+      "Explicit process entry conditions and handoffs",
+      "Evidence before completion claims",
+      "Skill behavior testing separate from infrastructure testing",
+      "Session bootstrap and client adapters in the reference repository"
+    ],
+    "adaptation": "Four process skills, on-demand technical references, direct craft guidance and evidence-based regression tests. No unconditional all-session bootstrap or approval chain added.",
+    "limit": "This audit reads the checked-out source; it does not independently certify Superpowers reliability or rank either plugin."
+  },
+  "current_skills_sha256": "4e1291631448c3ee661750ce0ccb8daeafd3f5b51aa965780abedc23d00d01b6",
+  "live_hit_test_snapshot_sha256": "c95f7fbc6a118827862175f29ab7995f171fcd8dd77e688ebbdf0983a81dba32",
+  "criteria": [
+    {
+      "id": "A",
+      "area": "Activation and discovery",
+      "status": "unverified",
+      "evidence_or_gap": "Descriptions are task-specific; native automatic triggering and rejection of unrelated requests have not been tested across clients."
+    },
+    {
+      "id": "B",
+      "area": "Brief and scope",
+      "status": "supported_in_narrow_trials",
+      "evidence_or_gap": "Original moth brief became a local editable artifact; bounded repair preserved appearance. New-work creative reference is now required, with narrow edits excluded."
+    },
+    {
+      "id": "C",
+      "area": "Context selection",
+      "status": "supported_in_narrow_trials",
+      "evidence_or_gap": "Four public skills; focused Editor decision probe loaded two. No controlled token-cost or context-pressure benchmark."
+    },
+    {
+      "id": "D",
+      "area": "Documentation authority",
+      "status": "supported_in_narrow_trials",
+      "evidence_or_gap": "CLI 1.3.0 help/docs/schema used in actual runs. Stable craft is written directly and skills have no routine web links."
+    },
+    {
+      "id": "E",
+      "area": "Editor capability discovery",
+      "status": "partially_exercised",
+      "evidence_or_gap": "Live MCP session_info succeeded with no open tabs. list_artboards returned No file context available. No mutation or export attempted."
+    },
+    {
+      "id": "F",
+      "area": "File authority and reconciliation",
+      "status": "decision_probe_only",
+      "evidence_or_gap": "Source ownership and preservation are specified; conflicting local/remote reconciliation has not been executed."
+    },
+    {
+      "id": "G",
+      "area": "Geometry and contours",
+      "status": "basic_artifact_supported",
+      "evidence_or_gap": "Native editable moth paths rendered. Contour and negative-space guidance strengthened; broad shape/style proficiency remains unbenchmarked."
+    },
+    {
+      "id": "H",
+      "area": "Hierarchy and layering",
+      "status": "supported_in_narrow_trials",
+      "evidence_or_gap": "Moth source preserves layered artwork; read/inspect guidance exists. Large nested component projects are not exercised."
+    },
+    {
+      "id": "I",
+      "area": "Input coverage",
+      "status": "failure_reproduced_and_corrected",
+      "evidence_or_gap": "Original center click worked while visible forewing click failed. Updated review requirements and live repair verified 38 positive, negative, repeat and interruption sequences."
+    },
+    {
+      "id": "J",
+      "area": "Data and bindings",
+      "status": "supported_in_narrow_trials",
+      "evidence_or_gap": "Input-name mismatch repair and boolean toggle use actual landed values. Complex converters, lists and nested models lack live coverage."
+    },
+    {
+      "id": "K",
+      "area": "Keyframe correctness",
+      "status": "partially_exercised",
+      "evidence_or_gap": "Basic glow transition rendered; broader animation types, blending and timing cases have no independent coverage."
+    },
+    {
+      "id": "L",
+      "area": "Layout and content extremes",
+      "status": "unverified",
+      "evidence_or_gap": "Instructions cover resize and long/empty data; no live responsive typography/layout case has been run."
+    },
+    {
+      "id": "M",
+      "area": "Motion craft",
+      "status": "guidance_strengthened",
+      "evidence_or_gap": "Added timing versus spacing, lead/follow, contacts, volume and loop velocity checks. Real-time performance review is still missing."
+    },
+    {
+      "id": "N",
+      "area": "Native editability",
+      "status": "supported_in_narrow_trials",
+      "evidence_or_gap": "RML retains named native artwork and interactions. Editor import/opening is unverified."
+    },
+    {
+      "id": "O",
+      "area": "Ownership and diagnosis",
+      "status": "supported_in_narrow_trials",
+      "evidence_or_gap": "Two concrete failures traced to the responsible input name and hit geometry rather than redrawing artwork."
+    },
+    {
+      "id": "P",
+      "area": "Preservation",
+      "status": "supported_in_narrow_trials",
+      "evidence_or_gap": "ZIP backup integrity and unchanged source hashes were verified. Backup-discovery issue was corrected in the authoring entrypoint."
+    },
+    {
+      "id": "Q",
+      "area": "Quality judgment",
+      "status": "partial",
+      "evidence_or_gap": "Independent reviewer found no required visual redesign but identified missed hit coverage and timing/handoff limits. Compliance, craft and handoff verdicts are now explicit."
+    },
+    {
+      "id": "R",
+      "area": "Rigging and deformation",
+      "status": "unverified",
+      "evidence_or_gap": "Guidance exists; bones, weights, constraints, extreme poses and editable rig handoff have not been exercised."
+    },
+    {
+      "id": "S",
+      "area": "Scripting and shaders",
+      "status": "partial",
+      "evidence_or_gap": "Luau attachment repair is tested. New Luau algorithms, AnimaScript and WGSL remain unverified. Editor shader guidance no longer requires CLI compilation."
+    },
+    {
+      "id": "T",
+      "area": "Target output",
+      "status": "unverified",
+      "evidence_or_gap": "Local .riv files were produced; independent destination-runtime playback and native .rev export were not tested."
+    },
+    {
+      "id": "U",
+      "area": "Usability and accessibility",
+      "status": "unverified",
+      "evidence_or_gap": "Headless pointer behavior is tested. Keyboard, semantics, reduced motion, actual device scale and assistive technologies are not."
+    },
+    {
+      "id": "V",
+      "area": "Validation and packaging",
+      "status": "tested",
+      "evidence_or_gap": "Seven validator tests pass. Two added tests first exposed a crash on missing skills and an escaping README link; both corrected. Package and skill validators pass."
+    },
+    {
+      "id": "W",
+      "area": "Work resumption",
+      "status": "decision_probe_only",
+      "evidence_or_gap": "Stale-note and concurrent-edit handling is specified; real compaction/session-resume trial missing."
+    },
+    {
+      "id": "X",
+      "area": "Cross-client compatibility",
+      "status": "unverified",
+      "evidence_or_gap": "Manifest validation is not live client certification. No multi-client or multi-model behavior comparison."
+    },
+    {
+      "id": "Y",
+      "area": "Yield and limitation reporting",
+      "status": "partially_exercised",
+      "evidence_or_gap": "Blocked-render probes and live empty-Editor session identify evidence limits. Host-specific unavailable-tool recovery is not exhaustively tested."
+    },
+    {
+      "id": "Z",
+      "area": "Evaluation maturity",
+      "status": "early",
+      "evidence_or_gap": "Retained artifacts and independent narrow tests exist. Missing representative creative corpus, reference fidelity, repeated sessions, real motion review and target-runtime checks."
+    }
+  ],
+  "new_regression": {
+    "before": {
+      "body_click": [
+        160,
+        155,
+        true
+      ],
+      "outer_wing_click": [
+        70,
+        110,
+        false
+      ],
+      "compile": "clean"
+    },
+    "correction": "One transparent hit-path changed from ellipse to rectangle in an isolated artifact; artwork unchanged.",
+    "passed_sequences": 38,
+    "pixel_equality": {
+      "before-rest=after-rest": true,
+      "before-body=after-body": true,
+      "before-rest=after-return": true,
+      "before-rest=after-interruption": true
+    },
+    "coverage": {
+      "threshold": "maximum RGB channel difference >10 from background (48,35,51), excludes background dithering",
+      "visiblePixels": 19698,
+      "visibleBounds": [
+        47,
+        91,
+        272,
+        224
+      ],
+      "hitBounds": [
+        42,
+        85,
+        278,
+        229
+      ],
+      "visiblePixelsOutside": 0
+    },
+    "evidence_directory": ".refrence/evaluations/2026-10-03-audit/hit-repair",
+    "limit": "Coverage analysis is raster evidence at 320x320, not exhaustive pointer dispatch at all pixels/scales."
+  },
+  "changes": [
+    "Required relevant creative-direction guidance for new/substantial artwork only",
+    "Added practical contour/composition and motion craft guidance",
+    "Separated compliance, craft and handoff review",
+    "Added intended hit-region and negative-input verification",
+    "Clarified Editor document preconditions, units and partial-result errors",
+    "Fixed two package validator defects with red/green tests",
+    "Documented readiness evidence and capability limits"
+  ],
+  "verification": {
+    "unit_tests": 7,
+    "package_validator": "passed",
+    "skill_validator": "all four passed",
+    "diff_check": "passed"
+  },
+  "next_required_evidence_for_high_tier_claim": [
+    "Reference-driven artwork and multi-size typography/content cases",
+    "Real-time expressive motion and rig/deformation review",
+    "Live Editor mutation and actual native/destination export checks",
+    "Represented scripting lanes and shaders exercised",
+    "Automatic triggering and repeatability across claimed clients/models"
+  ],
+  "not_claimed": [
+    "Every agent becomes professional",
+    "Category leadership",
+    "Production compatibility across all runtimes",
+    "Broad artistic mastery"
+  ]
+}

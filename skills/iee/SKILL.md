@@ -1,27 +1,41 @@
 ---
 name: iee
-description: Direct the creation and refinement of an original interactive Rive work using RML, Rive scripting, the CLI, or the Editor MCP. Use for Rive scene authoring, animation, and interaction design; skip runtime integration requests.
+description: Use when creating or substantially redesigning a Rive scene, character, animation, or interactive component, or when a Rive request needs creative direction. Excludes host application runtime integration.
 ---
 
-# Interactive Experience Engine
+# Direct a Rive work
 
-Create or refine an original Rive work from the user's visual and interaction brief. Decide what the viewer sees, what responds to input or data, and how motion communicates the change. For a small repair, preserve the existing direction. Keep the result coherent across artboards and states.
+**Principle:** make the user's idea visible, editable, and testable.
 
-## Route the work
+Work in the user's language. Preserve their references, assets, existing work, and authorization. An instruction to build or fix authorizes that local work; do not add repeated approval ceremonies.
 
-- Use `iee-design` to set the visual direction before substantial scene work.
-- Use `iee-rml` for editable scene structure. Use `iee-luau` or `iee-animascript` for computed behavior. Use `iee-wgsl` for GPU effects.
-- Use `iee-motion`, `iee-state-machines`, `iee-data-binding`, `iee-layouts`, or `iee-rigging` for the relevant craft problem.
-- Use `iee-mcp` when editing an open file through the Rive desktop Editor. Use `iee-review` before delivery.
+## Choose the path
 
-## Source of truth
+| Request | Next step |
+| --- | --- |
+| New work or substantial redesign | Establish the brief below, then use `iee-build` |
+| Clear, bounded edit | Use `iee-build` directly; preserve the existing direction |
+| Incorrect appearance or behavior | Use `iee-debug` |
+| Review or handoff | Use `iee-review` |
 
-Choose the authoring surface from the artifact: a local RML project uses the CLI; an open desktop Editor file can use MCP; a `.rev` can be imported into a new CLI project when text editing is needed. Preserve the user's existing source before crossing between surfaces. A CLI build can add generated IDs to RML, `rive pull` overwrites local source, and `rive push` replaces the linked Editor file's live content. Use push, pull, and publication only when the user requested that outcome.
+Do not load all four skills up front. A focused skill can handle its task without returning through this entrypoint.
 
-In a CLI project, read the installed CLI's topic-specific `rive docs` page and `rive schema` for exact syntax and object properties. The installed version is more reliable than memorized examples or this plugin. Read `rive docs format` before unfamiliar RML; search `rive docs gotchas` for the feature or failure at hand. Load only the relevant reference. If the CLI is unavailable, follow the [official installation guide](https://rive.app/docs/cli/getting-started) when CLI authoring is needed; use the [official Rive documentation](https://rive.app/docs) for planning until it is available.
+## Establish a usable brief
 
-Use the [source map](references/source-map.md) when selecting a CLI topic or a fallback Editor page.
+Identify the purpose, viewer, existing source, target sizes, important states, and requested deliverable. Infer what the request already supplies. Ask only when a missing choice materially changes the result; state reversible assumptions and proceed.
 
-Use RML for fixed, editable scene structure. Add scripting where behavior or imagery is computed. Keep an existing project's scripting lane: Luau uses `.luau`; AnimaScript uses `.as` with `scripting: wasm`. The work is the Rive artifact, not a host application integration.
+Describe the visual target briefly: focal point, silhouette, palette, composition, typography where relevant, and motion character. Include what an interaction should visibly do and how it returns. Make acceptance observable: “the glow toggles with a click and the moth remains legible at 320 px.”
 
-Review the actual result: compile it, inspect its resolved structure, render meaningful states, and exercise its input and data paths. Deliver the requested source project, Editor file, or export. Local `.riv` builds containing scripts are unsigned and may not run on web; publishing or an Editor `.rev` requires a Rive login. Report the artifact, the checks performed, and any remaining limitation.
+For new artwork or a substantial redesign, read [creative direction](references/creative-direction.md) and use its relevant critique lens. A bounded edit keeps the existing direction and does not need that intake. Do not prescribe the same style or number of visual elements across different briefs.
+
+## Build in visible passes
+
+Move to `iee-build` once the source, direction, and intended behavior are clear. Establish structure and silhouette, inspect an early render, then add content, behavior, and refinement. Let evidence guide revisions.
+
+For work spanning several passes, keep a short note with the brief, authoritative source, tool version, important owners, completed checks, and remaining defects. Reuse an existing note. After interruption, inspect current source before trusting old notes or captures. A small edit needs no new planning document.
+
+## Finish against the brief
+
+Use `iee-review` for current visual, behavioral, and handoff evidence. Reuse valid checks already collected; repeat only what a change or unresolved concern invalidates. Deliver the requested local source, Editor file, or export with concrete checks and material gaps.
+
+A compile is not a finished interaction. A screenshot is not an editable artifact. Keep those distinctions in the handoff.

@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "iee-core",
-  "version": "0.1.0",
-  "description": "Core skills and Rive Editor MCP connection for creating interactive Rive work.",
+  "version": "0.2.0",
+  "description": "Creative direction, authoring, diagnosis, and verification for local Rive work, with Editor MCP.",
   "author": {
     "name": "nonomnonom",
     "url": "https://github.com/nonomnonom"

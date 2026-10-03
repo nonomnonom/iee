@@ -17,6 +17,7 @@ FRONTMATTER = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.DOTALL)
 LOCAL_LINK = re.compile(r"\]\(([^)]+)\)")
 NAME = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 FIELDS = {"name", "description", "license", "allowed-tools", "metadata"}
+LOCAL_ONLY = {".git", ".venv", "__pycache__"}
 
 
 def fail(location, message):
@@ -67,20 +68,23 @@ def validate_skill(directory):
 
 
 def validate_files():
+    skill_roots = [path for path in SKILLS.iterdir() if path.is_dir()] if SKILLS.is_dir() else []
     for path in ROOT.rglob("*"):
-        if any(part in {".git", ".venv", "__pycache__"} for part in path.relative_to(ROOT).parts):
+        parts = path.relative_to(ROOT).parts
+        if parts[0] == ".refrence" or any(part in LOCAL_ONLY for part in parts):
             continue
         resolved = path.resolve()
         if not resolved.is_relative_to(ROOT):
             fail(path.relative_to(ROOT), "path escapes plugin root")
         if not path.is_file() or path.suffix.lower() != ".md":
             continue
-        skill_root = next((skill for skill in SKILLS.iterdir() if skill.is_dir() and path.is_relative_to(skill)), None)
+        skill_root = next((skill for skill in skill_roots if path.is_relative_to(skill)), None)
         for target in LOCAL_LINK.findall(path.read_text(encoding="utf-8")):
             if target.startswith(("https://", "http://", "mailto:", "#")):
                 continue
             destination = (path.parent / target.split("#", 1)[0]).resolve()
-            if not destination.is_file() or (skill_root and not destination.is_relative_to(skill_root)):
+            if (not destination.is_file() or not destination.is_relative_to(ROOT)
+                    or (skill_root and not destination.is_relative_to(skill_root))):
                 fail(path.relative_to(ROOT), f"invalid local link: {target}")
 
 
