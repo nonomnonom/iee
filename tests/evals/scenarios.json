@@ -97,6 +97,53 @@
         "Tests negative outside points and repeated clicks without double activation.",
         "Verifies compile/inspection, landed state and viewed renders; distinguishes tested coverage from unexercised runtime behavior."
       ]
+    },
+    {
+      "id": "responsive-status",
+      "mode": "live-cli",
+      "setup": "Give the current skill catalog, isolated directory, and installed CLI. Do not preload skill bodies.",
+      "request": "Create a responsive Rive status card with a title and progress value driven by data. Keep it readable at 280x200 and 640x240, including a long title and progress endpoints. Support pointer and keyboard interaction. Deliver editable native source and local export.",
+      "acceptance": [
+        "Actual layout reflows rather than scaling the whole drawing.",
+        "Long title and endpoints remain readable in viewed captures.",
+        "Pointer, keyboard, semantic action, repeat, outside, and interruption behavior agree with the bound state.",
+        "Open the actual exported file in an available destination; distinguish that evidence from CLI source preview."
+      ]
+    },
+    {
+      "id": "native-rig",
+      "mode": "live-cli",
+      "setup": "Give the skill catalog, isolated directory, and installed CLI.",
+      "request": "Create an articulated desk lamp using native Rive bones. Animate a slow nod that keeps arm joints connected. Deliver editable source, local export, and intermediate/extreme pose evidence.",
+      "acceptance": [
+        "Native bone hierarchy owns the segments; custom-script or GLB skinning does not count.",
+        "Viewed poses retain joint contact and legible shade silhouette.",
+        "Check frames around the loop seam, not just equal endpoints.",
+        "Report actual playback evidence separately from sampled poses."
+      ]
+    },
+    {
+      "id": "shader-effect",
+      "mode": "live-cli",
+      "setup": "Give the skill catalog, isolated directory, and installed CLI with its bundled docs.",
+      "request": "Create a small two-color procedural shimmer in WGSL driven by time. Keep its editable scene and scripts, and show the effect at two times.",
+      "acceptance": [
+        "WGSL is attached and contributes visible pixels.",
+        "Time changes the intended pattern; compilation alone is insufficient.",
+        "Identify actual compiler/backend limitations without replacing the shader with a fake implementation or claiming runtime parity."
+      ]
+    },
+    {
+      "id": "editor-export",
+      "mode": "live-editor",
+      "setup": "Use only a user-designated empty test document. Record active file and initial hierarchy.",
+      "request": "Create a colored editable shape in this test file, verify it visually, and export it locally for runtime and backup if available.",
+      "acceptance": [
+        "Inspect active file and returned per-operation content before mutation/retry.",
+        "Read back created hierarchy and view an actual capture.",
+        "Verify actual exported file in a destination runtime.",
+        "Treat a plan-gated native backup as unavailable; do not substitute a runtime export as editable backup or retry the denied feature."
+      ]
     }
   ]
 }

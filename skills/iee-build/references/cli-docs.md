@@ -11,6 +11,8 @@ Reuse the version and topics already inspected in this session. A version change
 
 For agent review, use a one-shot headless command such as `--screenshot`; the bare project command opens a persistent preview window. Use the live preview when the user needs it or a check requires it, and manage its lifetime explicitly. Publishing and push are remote operations, not preview commands. Confirm output files rather than relying only on a process exit code.
 
+Keep captures, reports, test helpers, and backups outside the project. CLI 1.3.0 discovers assets recursively; script-only projects can bundle unfamiliar files as blobs, while RML projects can omit unreferenced assets. Discovery alone does not prove embedding. A `.bak` extension avoids parsing a second RML source but does not exclude that file from discovery. If evidence must live inside the project, configure `exclude` using installed `project/rive-yaml` docs and inspect the resulting asset list/output size. `excludeFromRev` governs backup content and is not a substitute for excluding accidental runtime assets.
+
 | What the task needs | Concepts to locate through `rive docs` |
 | --- | --- |
 | Scene structure | artboards, components, groups, hierarchy, draw order, transforms, origin |

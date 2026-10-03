@@ -13,7 +13,7 @@ Identify the artifact and available tools. Use the CLI for a local RML project a
 
 Before mutation, inspect the affected artboard/component tree, coordinates, draw order, assets, and property owner. Distinguish a base value from animation, layout, bindings, or scripts that overwrite it. Use the [scene model](references/scene-model.md) only for concepts the task needs.
 
-Preserve recoverable source before builds that assign IDs, broad changes, imports, or tool handoffs. Store CLI backups outside discovered source roots, or with non-source extensions: an in-project backup ending in `.rml` can compile twice and cause duplicate IDs. Re-read after concurrent user/tool edits. Preserve stable IDs, names, interfaces, and unrelated work. For `.rev` imports, keep the original and use a new destination.
+Preserve recoverable source before builds that assign IDs, broad changes, imports, or tool handoffs. Keep backups and review evidence outside the CLI project, or explicitly exclude them through its installed configuration. An in-project `.rml` backup can compile twice; renaming it `.bak` stops duplicate compilation but can still bundle it as a blob. Screenshots and reports can also become exported assets. Re-read after concurrent user/tool edits. Preserve stable IDs, names, interfaces, and unrelated work. For `.rev` imports, keep the original and use a new destination.
 
 Push replaces linked remote content; pull overwrites local source. Identify both sides and preserve pending edits before either. Remote writes, signing, and publication require a requested outcome and destination; reuse existing authorization.
 

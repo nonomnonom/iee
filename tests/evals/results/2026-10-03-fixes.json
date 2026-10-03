@@ -1,0 +1,220 @@
+{
+  "date": "2026-10-03",
+  "purpose": "Follow-up fixes and live evidence after A-Z audit; supersedes only the capability gaps explicitly exercised here.",
+  "changes": [
+    "Handle Error text inside successful MCP envelopes.",
+    "Distinguish runtime export from plan-gated editable backup.",
+    "Check authored focus acquisition and embedded keyboard behavior.",
+    "Keep evidence/backups outside project or explicitly exclude them; distinguish RML reachability from script-only asset bundling.",
+    "Clarify GPU uniform layout, target format and reusable resource ownership.",
+    "Add reproducible installed-CLI checks and four live evaluation scenarios."
+  ],
+  "skills_sha256": {
+    "skills/iee/references/creative-direction.md": "abbb43b6feac5289efe01967e7bc434902c12059aeb016e799f48e16cd0ab7ce",
+    "skills/iee/references/work-types.md": "4cdcef1206f87947165f94445595feb837171f95c357fa88c85d6b827c48330d",
+    "skills/iee/SKILL.md": "a45ab04f24186508bda5dbea233a18534d8378a701db762320bf05c70032f97e",
+    "skills/iee-build/references/animascript.md": "585efd9d868c0add4926540f2768799745a5b3041b2871c213cc87aba160ac42",
+    "skills/iee-build/references/cli-docs.md": "a6f9c4ae7d62b3b3db8f7d96ce796b0fe9897a9800b9ef729ee23b1666d134d7",
+    "skills/iee-build/references/cli-topics.md": "f0006093fcf677e8c1031eb020920fac4eee9527a0487e82b90b4791b90b75de",
+    "skills/iee-build/references/data-binding.md": "973c0a40e93a2a76a4df4ddcc4b312b54ccc840d390f0a60b04d4677f6bc5855",
+    "skills/iee-build/references/editor.md": "dde2d9e007b4af154447edd10324ec1f07871e6b3dfcd1d3bd2add8cf28d0795",
+    "skills/iee-build/references/layouts.md": "f7a2a93fdf3326e3b2e8374a59b4e5a82495faca80d2d6a6880fc42bf29132d2",
+    "skills/iee-build/references/luau.md": "91cfbf94fd5da46c165dafcc4c8e9596bf72226be8b9dfc9558302a4bc4871f8",
+    "skills/iee-build/references/motion.md": "96d8740170827a1304c802bb904f688d7dad1e15c67ec9ab6dd7361635b568b5",
+    "skills/iee-build/references/rigging.md": "84ceb0dd9f79da22fa2be4eeb0355d16d1a8eaa3121eea96251917abf0ec27a0",
+    "skills/iee-build/references/rml.md": "d88de6995d8648a21b3455a753fed7c57830cadf25f747948d3c1bf5483255c1",
+    "skills/iee-build/references/scene-model.md": "543caf1352d8faf7bb57686dc11a0baea682783bd16ea0e595f92d1b73b655d1",
+    "skills/iee-build/references/state-machines.md": "dfb9b16da72b70686391e685e0ef8c32e16d5a66cc12f5979605dafbb3c99117",
+    "skills/iee-build/references/wgsl.md": "5db96fd70fba8bb502554897cb71e3bda0c9d99be0cafb7c54897d7587b6f578",
+    "skills/iee-build/SKILL.md": "1bbd64943f88416d73c4aad76662949839dae8b635c6c0ee285196cd78cc1edb",
+    "skills/iee-debug/references/diagnosis.md": "4075441eb399fc9d38327a3a8d1bc3e2e741dddc9a9f0825ccaeb0eb6ea0d826",
+    "skills/iee-debug/SKILL.md": "dcccc1898e49fd461214a40aad8e873b87650a852be7c4b16eabcbe12c6df728",
+    "skills/iee-review/references/verification.md": "f13865fdd7943c9aef88c302bb896690f175d9df676abbad6417edde7561d558",
+    "skills/iee-review/SKILL.md": "a47d2fde7f23ece14fa7019fb59506e32da3a9477b2412d926a336ecff713a7a"
+  },
+  "cli": {
+    "version": "rive 1.3.0",
+    "status": "passed",
+    "checks": [
+      {
+        "label": "focused down selects Options",
+        "passed": true
+      },
+      {
+        "label": "keyboard changes rendered selection",
+        "passed": true
+      },
+      {
+        "label": "up returns to Play",
+        "passed": true
+      },
+      {
+        "label": "authored entry focus accepts down without Tab",
+        "passed": true
+      },
+      {
+        "label": "menu semantic label exposed",
+        "passed": true
+      },
+      {
+        "label": "vm-start receives nested speed",
+        "passed": true
+      },
+      {
+        "label": "vm-later receives nested speed",
+        "passed": true
+      },
+      {
+        "label": "Luau script advances visible geometry",
+        "passed": true
+      },
+      {
+        "label": "zero bound speed stops geometry",
+        "passed": true
+      },
+      {
+        "label": "AnimaScript path effect changes pixels",
+        "passed": true
+      },
+      {
+        "label": "test runner detects deliberate failure",
+        "passed": true
+      },
+      {
+        "label": "known negative fixture still matches",
+        "passed": true
+      },
+      {
+        "label": "corrected fixture runs all seven tests",
+        "passed": true
+      },
+      {
+        "label": "native export exists",
+        "passed": true
+      },
+      {
+        "label": "script-only project bundles report without exclusion",
+        "passed": true
+      },
+      {
+        "label": "exclusion restores exact clean export",
+        "passed": true
+      }
+    ],
+    "evidence": ".refrence/evaluations/fix-all-cli-final-proof",
+    "scope": "Installed platform fixtures, not independent creative authorship. Negative script test fails with exit 6; corrected test passes seven cases. Exclusion restores byte-identical clean script-only export."
+  },
+  "responsive_agent": {
+    "sequences": 22,
+    "passed": true,
+    "pixel_assertions": 14,
+    "viewed": "Narrow long title with progress100 and actual web paused state inspected by parent. Native layout button width240 to600.",
+    "evidence": ".refrence/evaluations/fix-all-responsive",
+    "export_sha256": "23a72b29522098eb282a3ab2e47929eb7e14caa602d0ccc1bbd3fd7d3ca499a1"
+  },
+  "native_rig_agent": {
+    "captures": 33,
+    "native_bones": [
+      "RootBone 0:40",
+      "Bone 0:41 child of 0:40",
+      "Bone 0:42 child of 0:41"
+    ],
+    "inspect_problems": [],
+    "viewed": "Parent inspected eight-pose contact sheet; connected rigid joints and readable shade.",
+    "loop_evidence": {
+      "0-240": {
+        "identical": false,
+        "sum_channel_delta": 529
+      },
+      "1-241": {
+        "identical": true,
+        "sum_channel_delta": 0
+      },
+      "2-242": {
+        "identical": true,
+        "sum_channel_delta": 0
+      },
+      "239-240": {
+        "identical": false,
+        "sum_channel_delta": 1112
+      },
+      "240-241": {
+        "identical": false,
+        "sum_channel_delta": 529
+      },
+      "238-239": {
+        "identical": false,
+        "sum_channel_delta": 2045
+      },
+      "119-120": {
+        "identical": false,
+        "sum_channel_delta": 1113
+      },
+      "120-121": {
+        "identical": false,
+        "sum_channel_delta": 367
+      }
+    },
+    "evidence": ".refrence/evaluations/fix-all-rig",
+    "limit": "Rigid bone parenting, not weighted mesh/IK/complex acting. Sampled poses and seam checks do not prove subjective full-frame-rate motion quality."
+  },
+  "shader_agent": {
+    "status": "passed",
+    "changed_pixels": 65518,
+    "total_pixels": 65536,
+    "viewed": "Parent inspected warm/cool diagonal bands at two times.",
+    "evidence": ".refrence/evaluations/fix-all-shader",
+    "limit": "Local Luau GPUCanvas plus WGSL only; not signed delivery or all GPU backends."
+  },
+  "editor": {
+    "status": "authoring_and_runtime_export_passed",
+    "operations": [
+      "Inspect initially empty artboard",
+      "Create editable180px ellipse at250,250",
+      "Set fill to #ff65d6ad",
+      "Read hierarchy",
+      "Capture and inspect500px render",
+      "Export10632-byte .riv",
+      "Load exact .riv with web runtime and assert center RGBA101,214,173,255"
+    ],
+    "backup": "Native .rev export refused by workspace plan. No retry or plan/account changes. Original Editor document retained.",
+    "evidence": ".refrence/evaluations/fix-all-editor"
+  },
+  "web_runtime": {
+    "runtime": "@rive-app/canvas 2.44.0",
+    "checks": [
+      "Editor export paints expected mint center",
+      "Standalone card pointer changes bound value",
+      "Standalone card Enter returns value",
+      "No browser page errors"
+    ],
+    "editor": {
+      "artboard": "Artboard 1",
+      "states": [
+        "State Machine 1"
+      ]
+    },
+    "card": {
+      "artboard": "Status card",
+      "states": [
+        "Playback"
+      ]
+    },
+    "status": "passed"
+  },
+  "discovery": {
+    "claude": "All four plugin skills registered from local plugin-dir. Behavioral invocation blocked by authentication_failed, no login attempted.",
+    "codex": "Fresh read-only session selected iee-review from ordinary request. Local policy blocked reading skill body; final response correctly withheld readiness. This proves selection in one constrained session, not workflow execution or cross-model reliability.",
+    "evidence": ".refrence/evaluations/fix-all-discovery"
+  },
+  "limits": [
+    "No ranking or every-agent-professional claim.",
+    "Reference-matched creative corpus, expressive performance, weighted deformation, OS accessibility and all renderer/client/model combinations are not certified.",
+    "Account-dependent native backup/signing and destructive remote reconciliation are not simulated as successful."
+  ],
+  "verification": {
+    "package_tests": "7 passed",
+    "skills": "all four validated",
+    "package_validation": "passed"
+  }
+}

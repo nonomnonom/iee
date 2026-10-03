@@ -18,6 +18,8 @@ Reinspect before another mutation when the file, selection, or object state may 
 
 Read property units and enum values from the connected schema. RML/runtime values and Editor display values can differ: an opacity may be normalized in one surface and a percentage in another. Do not transfer numbers blindly between them. Inspect per-object or per-property errors as well as the overall tool result; retrying an entire partially successful batch can apply an edit twice.
 
+Inspect text payloads too: this server can return `success: true` around content beginning with `Error:`. Such a response is a failed operation. When a tool leaves nested fields untyped, use its validation feedback and inspect the result of a small edit before batching similar operations.
+
 An MCP success response does not prove the result looks or behaves correctly. Verify the requested state and input path through available preview/capture tools. For a review-only task, report findings without editing.
 
 ## Handle missing capabilities
@@ -25,3 +27,5 @@ An MCP success response does not prove the result looks or behaves correctly. Ve
 If the connected tools cannot perform a required operation, identify the specific gap. Use a CLI project only when a supported source handoff is available: preserve the native file, import into a new destination, and establish which copy owns further edits. Never overwrite local or Editor work merely to change tools.
 
 Use `iee-review` before delivery. Report the actual file/artboard, observed results, and checks the available tools could not exercise. Export or publish only the requested outcome and destination; use existing authorization.
+
+An Editor `.riv` export is for runtime playback; `.rev` is an editable backup and may require a workspace plan upgrade. If backup export is refused, do not retry or treat `.riv` as equivalent recoverable source. Preserve the Editor document and identify it in the handoff. For a broad edit that requires a backup, establish another supported recovery mechanism before proceeding. Exports snapshot the current in-memory document, including unsaved changes; verify the returned path and test that exact artifact.

@@ -2,7 +2,7 @@
 
 Run only checks relevant to the work. Use paths that exist; screenshot paths resolve from the current working directory. Inspect the images, not only command exit codes.
 
-These commands were checked against Rive CLI 1.3.0. Confirm their syntax in the installed version. Preserve source before a build that may assign IDs, and keep captures from the same revision as the final artifact. For an Editor-only workflow, collect equivalent evidence through the connected tools and identify any unavailable check.
+These commands were checked against Rive CLI 1.3.0. Confirm their syntax in the installed version. Preserve source before a build that may assign IDs, and keep captures from the same revision as the final artifact. Store evidence outside the project or explicitly exclude it from asset discovery. For an Editor-only workflow, collect equivalent evidence through the connected tools and identify any unavailable check.
 
 | Claim to verify | Evidence to collect |
 | --- | --- |
@@ -42,6 +42,7 @@ Do not infer behavior from changed file hashes alone: a rendering can change for
 - `--test` proves only the tests that actually ran; a project without authored tests needs behavioral evidence from the scene.
 - A project preview rebuilds source. Rive CLI 1.3.0 does not open a standalone `.riv`, so that preview does not independently verify an exported file in its destination runtime.
 - Local unsigned script playback does not prove web readiness. Consult installed publishing docs and retain the user's destination/authorization boundary.
+- CLI focus defaults can conceal missing focus acquisition in an embedded scene. Check the authored focus path and exercise keyboard input in the actual destination when claiming keyboard-ready delivery.
 - If a renderer, Editor operation, account session, or target runtime is unavailable, mark that check **not exercised**, explain the gap, and deliver only the claims supported by the available evidence.
 
 ## Craft review record

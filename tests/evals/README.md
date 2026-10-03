@@ -28,7 +28,8 @@ The fixture was exercised with CLI 1.3.0. If that sample changes, the helper sto
 - `script-input-repair` exercises reproduction, a narrow source fix, data injection, runtime behavior, and headless visual review.
 - `new-creative-work` exercises the brief-to-artifact flow and real repeated interaction. A visual reviewer must assess the rendered composition; compilation is insufficient.
 - `recoverable-source-copy` checks byte-preserving recovery without adding duplicate compiler inputs, followed by an actual local compilation.
-- The remaining cases are decision probes for scope, source preservation, tool boundaries, and honest claims. They do not certify live Editor integration, recovery after a real push/pull, signing, or every runtime.
+- `responsive-status`, `native-rig`, and `shader-effect` exercise additional authoring lanes; `editor-export` uses an explicitly designated live test document. Their results retain the scope of the tested artifact and renderer.
+- Cases marked `decision-probe` cover scope, source preservation, tool boundaries, and honest claims. They do not certify live recovery after a real push/pull, signing, or every runtime.
 
 The evaluation structure takes inspiration from the process skills and behavior testing in [obra/superpowers](https://github.com/obra/superpowers/tree/8ca22dba9a94f28898bbce59f2537ff4d87c747d). IEE's cases and instructions are specific to Rive. The local comparison checkout belongs in ignored `.refrence/`, outside the plugin's validated content.
 
@@ -44,3 +45,17 @@ Keep a capability unverified until a relevant artifact and interaction have been
 - Repeatability: rerun representative cases with independent sessions and the client/model combinations being claimed. Report failures and recovery cost alongside successes. Do not infer reliability across all agents from one model's trials.
 
 CI currently checks packaging and validator regressions. It does not certify artistic quality, live Editor behavior, or runtime compatibility. Human creative review and destination testing remain separate evidence.
+
+## Repeat the local tool checks
+
+With Rive CLI and Pillow installed, run:
+
+```sh
+python tests/evals/check_cli.py --rive <installed-executable> --output <new-directory>
+```
+
+The runner copies the installed keyboard, data-bound Luau, AnimaScript path-effect, script-test, and hello samples. It verifies compilation, keyboard return, semantic metadata, nested data and zero-speed behavior, changed rendered pixels, a deliberate failing test followed by its correction, and a native export. It also reproduces accidental report bundling in a script-only project and checks that exclusion restores the exact clean export. Logs, captures, commands, and `report.json` remain in the output directory. Existing output directories are refused; installed samples are never edited. A changed sample can fail the checks and must be inspected before adapting them.
+
+These checks establish tool behavior, not skill selection, original authorship, or visual quality. Inspect the saved captures. Export existence still needs a separate destination playback check. The recorded [follow-up results](results/2026-10-03-fixes.json) distinguish these checks from independent authoring and actual web-runtime playback.
+
+For client discovery, start a fresh session loading this checkout and give an ordinary Rive request without naming a skill. Retain the skill catalog and actual invocation trace. Include a narrow edit, review, and unrelated request. Authentication failure permits a registration check only, never a pass for automatic selection. Do not change the user's account or global configuration to make a test pass.
