@@ -1,0 +1,20 @@
+{
+  "name": "iee",
+  "interface": {
+    "displayName": "IEE"
+  },
+  "plugins": [
+    {
+      "name": "iee-core",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

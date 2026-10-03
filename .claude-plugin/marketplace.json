@@ -1,0 +1,14 @@
+{
+  "name": "iee",
+  "description": "Interactive Experience Engine plugins",
+  "owner": {
+    "name": "nonomnonom"
+  },
+  "plugins": [
+    {
+      "name": "iee-core",
+      "source": "./",
+      "description": "Core skills for creating interactive Rive work"
+    }
+  ]
+}
