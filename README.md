@@ -90,3 +90,7 @@ skills/            Portable skill packages and task-specific references
 This repository contains only `iee-core`. Future IEE plugins for particular styles or kinds of work are separate repositories and packages. Agent Plugins 1.0.0 has no portable dependency field between packages.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the source and validation rules. IEE is an independent project and is not affiliated with Rive.
+
+## License
+
+Copyright 2026 nonomnonom. IEE Core is licensed under the [GNU Affero General Public License v3.0 only](LICENSE). Contributions are accepted under the same license.

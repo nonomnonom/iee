@@ -16,3 +16,5 @@ IEE Core turns Rive's authoring documentation into concise, task-focused guidanc
 Run `python scripts/validate.py` from the repository root after changing a manifest, skill, or reference. The script checks both manifests against the canonical Agent Plugins 1.0.0 schemas, skill frontmatter, adapter consistency, package boundaries, and local Markdown links. Run `claude plugin validate .` when changing the Claude Code adapter. The GitHub Actions workflow runs the portable check on pushes and pull requests.
 
 For a change involving RML or scripting instructions, also verify the relevant command or syntax with a current Rive CLI. A valid package alone does not establish that an authored Rive scene compiles or behaves correctly.
+
+Contributions submitted to this repository are offered under the repository's [AGPL-3.0-only license](LICENSE).

@@ -92,8 +92,8 @@ def validate_adapters():
         claude_mcp = json.loads((ROOT / ".mcp.json").read_text(encoding="utf-8"))
         claude_market = json.loads((ROOT / ".claude-plugin/marketplace.json").read_text(encoding="utf-8"))
         codex_market = json.loads((ROOT / ".agents/plugins/marketplace.json").read_text(encoding="utf-8"))
-        if (claude["name"], claude["version"]) != (portable["name"], portable["version"]):
-            fail(".claude-plugin/plugin.json", "name or version differs from portable manifest")
+        if (claude["name"], claude["version"], claude["license"]) != (portable["name"], portable["version"], portable["license"]):
+            fail(".claude-plugin/plugin.json", "name, version, or license differs from portable manifest")
         if claude_mcp["mcpServers"]["rive-editor"]["url"] != mcp["mcpServers"]["rive-editor"]["url"]:
             fail(".mcp.json", "Editor URL differs from portable MCP configuration")
         for location, market in ((".claude-plugin/marketplace.json", claude_market), (".agents/plugins/marketplace.json", codex_market)):
